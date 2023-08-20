@@ -8,8 +8,8 @@ with the computer.*/
 
 function getComputerChoice () {
 
-    let computerOptions = ["rock" , "paper" , "scissors"]
-    let randomChoice = Math.floor(Math.random() * computerOptions.length) + 1
+    let computerOptions = ["rock" , "paper" , "scissors"];
+    let randomChoice = Math.floor(Math.random() * computerOptions.length) + 1;
 
  if (randomChoice === 1) {
    return "rock";
@@ -21,8 +21,42 @@ function getComputerChoice () {
 
 }
 
-console.log(getComputerChoice());
 
 
-//to make it understand how the game works(rock beats scizor beats paper and so on)
+
 //to make it play a round with the 'player'.
+//so to  make it play i create a function called playround that takes two parameters my and the computer
+/*
+it isn't working correctly,it gives different results,why?
+  
+ */
+
+function playRound (playerSelection , computerSelection) {
+  playerSelection = playerSelection.toLowerCase();
+  computerSelection = computerSelection.toLowerCase();
+  if(playerSelection == computerSelection){
+    return "It's a tie!"}
+    else if(playerSelection === 'rock'){
+      if(computerSelection === 'paper'){
+        return 'you lose paper beats rock';
+    }else{
+      return 'you win rock beats scissors'}
+    }else if(playerSelection === 'scissors'){
+      if(computer === 'rock'){
+          return 'you lose rock beats scissors';
+      }else{
+          return 'you win scissors beats paper';
+      }
+    }else if(playerSelection === 'paper'){
+      if(computerSelection === 'scissors'){
+          return 'you lose scissors beats paper';
+      }else{
+          return 'you win paper beats rock';
+      }    
+    }     
+}
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(computerSelection)
+console.log(playRound(playerSelection, computerSelection));
