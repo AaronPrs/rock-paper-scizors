@@ -1,8 +1,10 @@
+//rock paper scissors game
 
+//scores
+let playerScore = 0;
+let computerScore = 0;
 
-
-
-
+//the computer
 function getComputerChoice () {
 
     let computerOptions = ["rock" , "paper" , "scissors"];
@@ -18,53 +20,43 @@ function getComputerChoice () {
 
 }
 
-let moves = 0;
 
+//round
 function playRound (playerSelection , computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   computerSelection = computerSelection.toLowerCase();
   if(playerSelection == computerSelection){
-    alert ("It's a tie!"),
-    moves++;
+    alert ("It's a tie!");
   }
     else if(playerSelection === 'rock'){
       if(computerSelection === 'paper'){
         alert ('you lose paper beats rock'),
-        computerScore++,
-        moves++;
+        computerScore++;
     }else{
       alert ('you win rock beats scissors'),
-      playerScore++,
-      moves++}
+      playerScore++;
+    }
     }else if(playerSelection === 'scissors'){
       if(computer === 'rock'){
           alert ('you lose rock beats scissors'),
-          computerScore++,
-          moves++;
+          computerScore++;
       }else{
           alert ('you win scissors beats paper'),
-          playerScore++,
-          moves++;
+          playerScore++;
       }
     }else if(playerSelection === 'paper'){
       if(computerSelection === 'scissors'){
           alert ( 'you lose scissors beats paper'),
-          computerScore++,
-          moves++;
+          computerScore++;
       }else{
           alert ('you win paper beats rock'),
-          playerScore++,
-          moves++;
+          playerScore++;
       }    
     }     
 }
 
-const playerSelection = prompt();
-const computerSelection = getComputerChoice();
 
-
-
-
+//game loop
 function game(playerScore, computerScore,){
 for (playerScore  || computerScore  ; playerScore !== 5 || computerScore !== 5 ; playRound ){
   if (playerScore === 5 || computerScore === 5) {
@@ -78,6 +70,3 @@ for (playerScore  || computerScore  ; playerScore !== 5 || computerScore !== 5 ;
 }
 
 
-console.log(computerSelection)
-console.log(playRound(playerSelection, computerSelection));
-console.log(game(playerScore, computerScore));
