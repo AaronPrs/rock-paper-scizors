@@ -24,43 +24,46 @@ function getComputerChoice () {
 //round
 function playRound (playerSelection , computerSelection) {
   playerSelection = playerSelection.toLowerCase();
-  computerSelection = computerSelection.tostring().toLowerCase();
+  computerSelection = computerSelection.toString().toLowerCase();
+  
   //tie
-  if(playerSelection == computerSelection){
-    alert ("It's a tie!");
+  
+  if(playerSelection === computerSelection){
+  alert ("It's a tie!");
+  return;
   }
+  
   //rock
   if(playerSelection === 'rock'){
-      if(computerSelection === 'paper'){
-        alert ('you lose paper beats rock'),
-        computerScore++;
-    }else{
-      alert ('you win rock beats scissors'),
-      playerScore++;
-    }
-    }
-    //scissors
-    else if(playerSelection === 'scissors'){
-      if(computerSelection === 'rock'){
-          alert ('you lose rock beats scissors'),
-          computerScore++;
-      }else{
-          alert ('you win scissors beats paper'),
-          playerScore++;
-      }
-    }
-    //paper
-    else if(playerSelection === 'paper'){
-      if(computerSelection === 'scissors'){
-          alert ( 'you lose scissors beats paper'),
-          computerScore++;
-      }else{
-          alert ('you win paper beats rock'),
-          playerScore++;
-      }    
-    }     
-}
-
+  if(computerSelection === 'paper'){
+  alert ('you lose paper beats rock'),
+  computerScore++;
+  }else{
+  alert ('you win rock beats scissors'),
+  playerScore++;
+  }
+  }
+  //scissors
+  else if(playerSelection === 'scissors'){
+  if(computerSelection === 'rock'){
+  alert ('you lose rock beats scissors'),
+  computerScore++;
+  }else{
+  alert ('you win scissors beats paper')
+  playerScore++;
+  }
+  }
+  //paper
+  else if(playerSelection === 'paper'){
+  if(computerSelection === 'scissors'){
+  alert ( 'you lose scissors beats paper'),
+  computerScore++;
+  }else{
+  alert ('you win paper beats rock'),
+  playerScore++;
+  } 
+  } 
+  }
 //function to check winner
 function checkWinner() {
   if (playerScore === 5 || computerScore === 5) {
@@ -75,16 +78,14 @@ function checkWinner() {
   }
 
 //game loop
-function game(playerScore, computerScore,){
-for (playerScore  || computerScore  ; playerScore !== 5 || computerScore !== 5 ; playRound ){
-  if (playerScore === 5 || computerScore === 5) {
-    const winner =
-      playerScore === 5
-        ? "You win the game! Congratulations!"
-        : "Computer wins the game! Try again next time!";
-    alert (winner);
+function game(){
+  for(playerScore == 0 && computerScore == 0 ; playerScore <= 5 || computerScore <= 5 ; playRound(window.prompt("player" + ' ' + playerScore + " " + "vs" + " " + computerScore + ' ' + "computer" ), getComputerChoice())){
+  if(playerScore === 5 || computerScore == 5){
+  checkWinner();
+  break; 
   }
-}
-}
-
+  }
+  }
+  console.log(game());
+  
 
