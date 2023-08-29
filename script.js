@@ -24,11 +24,13 @@ function getComputerChoice () {
 //round
 function playRound (playerSelection , computerSelection) {
   playerSelection = playerSelection.toLowerCase();
-  computerSelection = computerSelection.toLowerCase();
+  computerSelection = computerSelection.tostring().toLowerCase();
+  //tie
   if(playerSelection == computerSelection){
     alert ("It's a tie!");
   }
-    else if(playerSelection === 'rock'){
+  //rock
+  if(playerSelection === 'rock'){
       if(computerSelection === 'paper'){
         alert ('you lose paper beats rock'),
         computerScore++;
@@ -36,15 +38,19 @@ function playRound (playerSelection , computerSelection) {
       alert ('you win rock beats scissors'),
       playerScore++;
     }
-    }else if(playerSelection === 'scissors'){
-      if(computer === 'rock'){
+    }
+    //scissors
+    else if(playerSelection === 'scissors'){
+      if(computerSelection === 'rock'){
           alert ('you lose rock beats scissors'),
           computerScore++;
       }else{
           alert ('you win scissors beats paper'),
           playerScore++;
       }
-    }else if(playerSelection === 'paper'){
+    }
+    //paper
+    else if(playerSelection === 'paper'){
       if(computerSelection === 'scissors'){
           alert ( 'you lose scissors beats paper'),
           computerScore++;
@@ -55,6 +61,18 @@ function playRound (playerSelection , computerSelection) {
     }     
 }
 
+//function to check winner
+function checkWinner() {
+  if (playerScore === 5 || computerScore === 5) {
+  const winner =
+  playerScore === 5
+  ? "You win the game! Congratulations!"
+  : "Computer wins the game! Try again next time!";
+  alert(winner);
+  return true;
+  }
+  return false;
+  }
 
 //game loop
 function game(playerScore, computerScore,){
