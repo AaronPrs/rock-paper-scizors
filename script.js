@@ -1,10 +1,4 @@
-/*okay so i have to play a game of rock paper scissors
-with the computer.*/
 
-//for that I need to make the computer play
-//how to make the computer play,well the course says to create a function that acts as the computer
-//then what is it that the computer has to make?to choose between the options 
-//how do i do that?
 
 
 
@@ -24,15 +18,6 @@ function getComputerChoice () {
 
 }
 
-
-
-
-//to make it play a round with the 'player'.
-//so to  make it play i create a function called play round that takes two parameters my and the computer
-/*
-it isn't working correctly,it gives different results,why?
-  
- */
 let moves = 0;
 
 function playRound (playerSelection , computerSelection) {
